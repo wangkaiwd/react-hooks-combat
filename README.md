@@ -1,15 +1,15 @@
-## `React`的新特性
+# umi project
 
-### `context`
+## Getting Started
 
-### `lazy`和`suspense`
+Install dependencies,
 
-### `memo`提升组件性能
+```bash
+$ yarn
+```
 
-## `React Hooks`
-### `useState`
-如何让`useState`的初始值不是每次都进行重复计算
+Start the dev server,
 
-### `useEffect`
-
-这里注意`DOM`元素删除后绑定的事件会失效
+```bash
+$ yarn start
+```
