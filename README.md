@@ -1,15 +1,13 @@
-# umi project
+## umi project
 
-## Getting Started
+* [plugin](https://umijs.org/docs/plugin)
 
-Install dependencies,
+react relevant technology used in umi:
 
-```bash
-$ yarn
-```
+* react
+* react-dom
+* react-router-dom
 
-Start the dev server,
+### problem
 
-```bash
-$ yarn start
-```
+* What does in entry file: `.umi/umi.ts` ?

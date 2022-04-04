@@ -4,8 +4,8 @@ export default defineConfig({
   nodeModulesTransform: {
     type: "none"
   },
+  hash: true,
   mock: false,
-  routes: [],
   webpack5: {},
   fastRefresh: {}
 });
