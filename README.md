@@ -11,3 +11,6 @@ react relevant technology used in umi:
 ### problem
 
 * What does in entry file: `.umi/umi.ts` ?
+* How to handle cdn assets with webpack ?
+* How to import `ant-design` global css ?
+* Why import statement work only when use its export value ?
