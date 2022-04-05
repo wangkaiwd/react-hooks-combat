@@ -1,15 +1,24 @@
-import { useState } from 'react';
-import { Button } from 'antd';
+import useRequest from '../../hooks/useRequest';
+import { fetchPost } from '../../api/posts';
+import { List } from 'antd';
+import { useEffect } from 'react';
 
+// TODO: Why app update five times
 function App () {
-  const [count, setCount] = useState(0);
-  const onClick = () => {
-    setCount(count + 1);
-  };
+  const { data, loading, request } = useRequest(fetchPost);
+  console.log('data', data);
+  useEffect(() => {
+    request().then(null);
+  }, []);
+
   return (
     <>
-      <h2 data-testid="count">{count}</h2>
-      <Button type='primary' onClick={onClick}>click</Button>
+      <List
+        loading={loading}
+        bordered
+        dataSource={data}
+        renderItem={(item: any) => <List.Item>{item.title}</List.Item>}
+      />
     </>
   );
 }
