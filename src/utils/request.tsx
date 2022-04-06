@@ -7,7 +7,7 @@ const instance = axios.create({
 });
 
 // Add a request interceptor
-instance.interceptors.request.use(function (config) {
+instance.interceptors.fetch.use(function (config) {
   return config;
 }, function (error) {
   return Promise.reject(error);
