@@ -3,24 +3,26 @@ import { useState } from 'react';
 type Fetch = (...args: any[]) => Promise<any>
 type Status = 'init' | 'error' | 'success'
 
+interface IState {
+  data: any
+  status: Status;
+  loading: boolean,
+}
+
 const useRequest = (fetch: Fetch) => {
-  const [data, setData] = useState<any>(undefined);
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<Status>('init');
+  const [state, setState] = useState<IState>({ data: undefined, loading: false, status: 'init' });
   const request = (...args: any[]) => {
-    setLoading(true);
+    setState({ ...state, loading: true });
     return fetch(...args)
       .then((res) => {
-        setStatus('success');
-        setLoading(false);
-        setData(res);
+        // render is sync ?
+        setState({ loading: false, data: res, status: 'success' });
       })
       .catch(() => {
-        setStatus('error');
-        setLoading(false);
+        setState({ ...state, loading: false, status: 'error' });
       });
   };
-  return { data, loading, status, request };
+  return { ...state, request };
 };
 
 export default useRequest;

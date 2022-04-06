@@ -6,7 +6,6 @@ import { useEffect } from 'react';
 // TODO: Why app update five times
 function App () {
   const { data, loading, request } = useRequest(fetchPost);
-  console.log('data', data);
   useEffect(() => {
     request().then(null);
   }, []);
