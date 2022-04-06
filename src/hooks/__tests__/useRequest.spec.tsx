@@ -3,9 +3,9 @@ import { render, waitFor } from '@testing-library/react';
 import { useEffect, useMemo, useRef } from 'react';
 
 describe('useRequest', () => {
-  it('should work', () => {
+  it('should generate loading and data', () => {
     const App = () => {
-      const { data, loading, fetch, status } = useRequest(() => Promise.resolve({ a: 1, b: 2 }));
+      const { data, loading, fetch } = useRequest(() => Promise.resolve({ a: 1, b: 2 }));
       useEffect(() => {
         fetch().then(null);
       }, []);

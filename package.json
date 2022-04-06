@@ -38,6 +38,7 @@
   "devDependencies": {
     "@craco/craco": "^7.0.0-alpha.3",
     "@mrbatman/craco-antd": "^1.20.0",
+    "@testing-library/react-hooks": "^7.0.2",
     "msw": "^0.39.2"
   }
 }
